@@ -13,7 +13,7 @@ más grande haste que cumpla con lo pedido en este caso  20px 0 20px 20px */
 .nav {
     position: fixed;
     inset: 20px 0 20px 20px;
-    width: 75px;
+    width: 60px;
     background: #fff;
     transition: 0.5s;
     display: flex;
@@ -32,7 +32,7 @@ más grande haste que cumpla con lo pedido en este caso  20px 0 20px 20px */
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        padding: 0 20px;
+        padding: 0 15px;
 
         &::before {
             content: "";
@@ -65,6 +65,77 @@ más grande haste que cumpla con lo pedido en este caso  20px 0 20px 20px */
 
         li {
             list-style: none;
+            position: relative;
+            width: 100%;
+            height: 60px;
+            padding: 0 10px;
+            transition: 0.5s;
+
+            &.active {
+                transform: translate(30px);
+
+                a {
+                    .icon {
+                        color: white;
+                        background: var(--clr);
+
+                        &::before {
+                            opacity: 0.5;
+                        }
+                    }
+
+                    .text {
+                        color: var(--clr);
+                    }
+                }
+            }
+
+            a {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-self: flex-start;
+                text-align: center;
+                text-decoration: none;
+
+                .icon {
+                    position: relative;
+                    display: block;
+                    min-width: 40px;
+                    height: 40px;
+                    line-height: 45px;
+                    border-radius: 10px;
+                    transition: 0.5s;
+                    font-size: 20px;
+                    color: #141414;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: var(--clr);
+                        filter: blur(8px);
+                        opacity: 0;
+                        transition: 0.5s;
+                    }
+                }
+
+                .text {
+                    position: relative;
+                    padding: 0 15px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    color: aqua;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: 0.5s;
+                }
+            }
         }
     }
 }
