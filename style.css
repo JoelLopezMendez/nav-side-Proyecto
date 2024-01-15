@@ -130,12 +130,34 @@ más grande haste que cumpla con lo pedido en este caso  20px 0 20px 20px */
                     height: 60px;
                     display: flex;
                     align-items: center;
-                    color: aqua;
+                    color: #141414;
                     opacity: 0;
                     visibility: hidden;
                     transition: 0.5s;
                 }
             }
         }
+    }
+
+    &.open .menuToggle::before {
+        transform: translateY(0px) rotate(45deg);
+    }
+
+    &.open .menuToggle::after {
+        transform: translateY(0px) rotate(-45deg);
+        box-shadow: 0 0 0 rebeccapurple;
+    }
+
+    &.open {
+        width: 12%;
+    }
+
+    &.open ul li.active {
+        transform: translateX(10px);
+    }
+
+    &.open ul li a .text {
+        opacity: 1;
+        visibility: visible;
     }
 }
